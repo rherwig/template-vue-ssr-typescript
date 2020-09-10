@@ -1,0 +1,26 @@
+apiVersion: skaffold/v2beta6
+kind: Config
+
+build:
+  artifacts:
+    - image: node-example
+      docker:
+        dockerfile: ./.docker/production/Dockerfile
+      context: .
+
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    build:
+      artifacts:
+        - image: node-example
+          context: .
+          docker:
+            dockerfile: ./.docker/development/Dockerfile
+            buildArgs:
+              ENV: development
+          sync:
+            manual:
+              - src: 'src/**/*'
+                dest: .

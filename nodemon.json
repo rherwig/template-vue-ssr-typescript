@@ -1,0 +1,16 @@
+{
+  "watch": [
+    "src/"
+  ],
+  "legacyWatch": true,
+  "ext": "ts",
+  "ignore": [
+    "src/**/*.test.ts",
+    "src/client/**/*",
+    "src/shared/**/*"
+  ],
+  "exec": "node -r ts-node/register --inspect=0.0.0.0 src/index.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

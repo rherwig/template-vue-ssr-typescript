@@ -1,0 +1,5 @@
+# Configuration files
+*.js
+
+# Types
+types/*
