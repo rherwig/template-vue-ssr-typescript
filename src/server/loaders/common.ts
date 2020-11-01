@@ -10,10 +10,8 @@ import type { Application, NextFunction, Request, Response } from 'express';
  * @return {Promise<Application>}
  */
 export default async (app: Application): Promise<Application> => {
-    const isDevelopment = process.env.NODE_ENV === 'development';
-
     app.use(helmet({
-        contentSecurityPolicy: isDevelopment ? false : undefined,
+        contentSecurityPolicy: false,
     }));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({

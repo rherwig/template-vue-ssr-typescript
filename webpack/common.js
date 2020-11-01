@@ -1,6 +1,5 @@
 const { resolve } = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
-import Dotenv from 'dotenv-webpack';
 
 const context = resolve(__dirname, '..');
 
@@ -46,7 +45,6 @@ const config = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new Dotenv(),
     ],
 };
 
